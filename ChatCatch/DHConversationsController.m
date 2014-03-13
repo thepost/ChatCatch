@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Dashend. All rights reserved.
 //
 
-#import "DHSecondViewController.h"
+#import "DHConversationsController.h"
 
-@interface DHSecondViewController ()
+@interface DHConversationsController ()
 
 @end
 
-@implementation DHSecondViewController
+@implementation DHConversationsController
 
 - (void)viewDidLoad
 {

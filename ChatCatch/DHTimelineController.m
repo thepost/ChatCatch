@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Dashend. All rights reserved.
 //
 
-#import "DHFirstViewController.h"
+#import "DHTimelineController.h"
 
-@interface DHFirstViewController ()
+@interface DHTimelineController ()
 
 @end
 
-@implementation DHFirstViewController
+@implementation DHTimelineController
 
 - (void)viewDidLoad
 {
