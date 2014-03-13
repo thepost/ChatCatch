@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D7B44DE218D234DA0087DA66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B44DE118D234DA0087DA66 /* Foundation.framework */; };
+		D7B44DE418D234DA0087DA66 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B44DE318D234DA0087DA66 /* CoreGraphics.framework */; };
+		D7B44DE618D234DA0087DA66 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B44DE518D234DA0087DA66 /* UIKit.framework */; };
+		D7B44DEC18D234DA0087DA66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7B44DEA18D234DA0087DA66 /* InfoPlist.strings */; };
+		D7B44DEE18D234DA0087DA66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B44DED18D234DA0087DA66 /* main.m */; };
+		D7B44DF218D234DA0087DA66 /* DHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B44DF118D234DA0087DA66 /* DHAppDelegate.m */; };
+		D7B44DF518D234DA0087DA66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7B44DF318D234DA0087DA66 /* Main.storyboard */; };
+		D7B44DF818D234DA0087DA66 /* DHFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B44DF718D234DA0087DA66 /* DHFirstViewController.m */; };
+		D7B44DFB18D234DA0087DA66 /* DHSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B44DFA18D234DA0087DA66 /* DHSecondViewController.m */; };
+		D7B44DFD18D234DA0087DA66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7B44DFC18D234DA0087DA66 /* Images.xcassets */; };
+		D7B44E0418D234DA0087DA66 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B44E0318D234DA0087DA66 /* XCTest.framework */; };
+		D7B44E0518D234DA0087DA66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B44DE118D234DA0087DA66 /* Foundation.framework */; };
+		D7B44E0618D234DA0087DA66 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B44DE518D234DA0087DA66 /* UIKit.framework */; };
+		D7B44E0E18D234DA0087DA66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7B44E0C18D234DA0087DA66 /* InfoPlist.strings */; };
+		D7B44E1018D234DA0087DA66 /* ChatCatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B44E0F18D234DA0087DA66 /* ChatCatchTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7B44E0718D234DA0087DA66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7B44DD618D234DA0087DA66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7B44DDD18D234DA0087DA66;
+			remoteInfo = ChatCatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D7B44DDE18D234DA0087DA66 /* ChatCatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatCatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7B44DE118D234DA0087DA66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D7B44DE318D234DA0087DA66 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D7B44DE518D234DA0087DA66 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D7B44DE918D234DA0087DA66 /* ChatCatch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChatCatch-Info.plist"; sourceTree = "<group>"; };
+		D7B44DEB18D234DA0087DA66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D7B44DED18D234DA0087DA66 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D7B44DEF18D234DA0087DA66 /* ChatCatch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChatCatch-Prefix.pch"; sourceTree = "<group>"; };
+		D7B44DF018D234DA0087DA66 /* DHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHAppDelegate.h; sourceTree = "<group>"; };
+		D7B44DF118D234DA0087DA66 /* DHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHAppDelegate.m; sourceTree = "<group>"; };
+		D7B44DF418D234DA0087DA66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D7B44DF618D234DA0087DA66 /* DHFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHFirstViewController.h; sourceTree = "<group>"; };
+		D7B44DF718D234DA0087DA66 /* DHFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHFirstViewController.m; sourceTree = "<group>"; };
+		D7B44DF918D234DA0087DA66 /* DHSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHSecondViewController.h; sourceTree = "<group>"; };
+		D7B44DFA18D234DA0087DA66 /* DHSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHSecondViewController.m; sourceTree = "<group>"; };
+		D7B44DFC18D234DA0087DA66 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D7B44E0218D234DA0087DA66 /* ChatCatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatCatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7B44E0318D234DA0087DA66 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D7B44E0B18D234DA0087DA66 /* ChatCatchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChatCatchTests-Info.plist"; sourceTree = "<group>"; };
+		D7B44E0D18D234DA0087DA66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D7B44E0F18D234DA0087DA66 /* ChatCatchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatCatchTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D7B44DDB18D234DA0087DA66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7B44DE418D234DA0087DA66 /* CoreGraphics.framework in Frameworks */,
+				D7B44DE618D234DA0087DA66 /* UIKit.framework in Frameworks */,
+				D7B44DE218D234DA0087DA66 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7B44DFF18D234DA0087DA66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7B44E0418D234DA0087DA66 /* XCTest.framework in Frameworks */,
+				D7B44E0618D234DA0087DA66 /* UIKit.framework in Frameworks */,
+				D7B44E0518D234DA0087DA66 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D7B44DD518D234DA0087DA66 = {
+			isa = PBXGroup;
+			children = (
+				D7B44DE718D234DA0087DA66 /* ChatCatch */,
+				D7B44E0918D234DA0087DA66 /* ChatCatchTests */,
+				D7B44DE018D234DA0087DA66 /* Frameworks */,
+				D7B44DDF18D234DA0087DA66 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D7B44DDF18D234DA0087DA66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7B44DDE18D234DA0087DA66 /* ChatCatch.app */,
+				D7B44E0218D234DA0087DA66 /* ChatCatchTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7B44DE018D234DA0087DA66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7B44DE118D234DA0087DA66 /* Foundation.framework */,
+				D7B44DE318D234DA0087DA66 /* CoreGraphics.framework */,
+				D7B44DE518D234DA0087DA66 /* UIKit.framework */,
+				D7B44E0318D234DA0087DA66 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7B44DE718D234DA0087DA66 /* ChatCatch */ = {
+			isa = PBXGroup;
+			children = (
+				D7B44DF018D234DA0087DA66 /* DHAppDelegate.h */,
+				D7B44DF118D234DA0087DA66 /* DHAppDelegate.m */,
+				D7B44DF318D234DA0087DA66 /* Main.storyboard */,
+				D7B44DF618D234DA0087DA66 /* DHFirstViewController.h */,
+				D7B44DF718D234DA0087DA66 /* DHFirstViewController.m */,
+				D7B44DF918D234DA0087DA66 /* DHSecondViewController.h */,
+				D7B44DFA18D234DA0087DA66 /* DHSecondViewController.m */,
+				D7B44DFC18D234DA0087DA66 /* Images.xcassets */,
+				D7B44DE818D234DA0087DA66 /* Supporting Files */,
+			);
+			path = ChatCatch;
+			sourceTree = "<group>";
+		};
+		D7B44DE818D234DA0087DA66 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D7B44DE918D234DA0087DA66 /* ChatCatch-Info.plist */,
+				D7B44DEA18D234DA0087DA66 /* InfoPlist.strings */,
+				D7B44DED18D234DA0087DA66 /* main.m */,
+				D7B44DEF18D234DA0087DA66 /* ChatCatch-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D7B44E0918D234DA0087DA66 /* ChatCatchTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7B44E0F18D234DA0087DA66 /* ChatCatchTests.m */,
+				D7B44E0A18D234DA0087DA66 /* Supporting Files */,
+			);
+			path = ChatCatchTests;
+			sourceTree = "<group>";
+		};
+		D7B44E0A18D234DA0087DA66 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D7B44E0B18D234DA0087DA66 /* ChatCatchTests-Info.plist */,
+				D7B44E0C18D234DA0087DA66 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D7B44DDD18D234DA0087DA66 /* ChatCatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7B44E1318D234DA0087DA66 /* Build configuration list for PBXNativeTarget "ChatCatch" */;
+			buildPhases = (
+				D7B44DDA18D234DA0087DA66 /* Sources */,
+				D7B44DDB18D234DA0087DA66 /* Frameworks */,
+				D7B44DDC18D234DA0087DA66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChatCatch;
+			productName = ChatCatch;
+			productReference = D7B44DDE18D234DA0087DA66 /* ChatCatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D7B44E0118D234DA0087DA66 /* ChatCatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7B44E1618D234DA0087DA66 /* Build configuration list for PBXNativeTarget "ChatCatchTests" */;
+			buildPhases = (
+				D7B44DFE18D234DA0087DA66 /* Sources */,
+				D7B44DFF18D234DA0087DA66 /* Frameworks */,
+				D7B44E0018D234DA0087DA66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7B44E0818D234DA0087DA66 /* PBXTargetDependency */,
+			);
+			name = ChatCatchTests;
+			productName = ChatCatchTests;
+			productReference = D7B44E0218D234DA0087DA66 /* ChatCatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7B44DD618D234DA0087DA66 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DH;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Dashend;
+				TargetAttributes = {
+					D7B44E0118D234DA0087DA66 = {
+						TestTargetID = D7B44DDD18D234DA0087DA66;
+					};
+				};
+			};
+			buildConfigurationList = D7B44DD918D234DA0087DA66 /* Build configuration list for PBXProject "ChatCatch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D7B44DD518D234DA0087DA66;
+			productRefGroup = D7B44DDF18D234DA0087DA66 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D7B44DDD18D234DA0087DA66 /* ChatCatch */,
+				D7B44E0118D234DA0087DA66 /* ChatCatchTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D7B44DDC18D234DA0087DA66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7B44DFD18D234DA0087DA66 /* Images.xcassets in Resources */,
+				D7B44DEC18D234DA0087DA66 /* InfoPlist.strings in Resources */,
+				D7B44DF518D234DA0087DA66 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7B44E0018D234DA0087DA66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7B44E0E18D234DA0087DA66 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D7B44DDA18D234DA0087DA66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7B44DF218D234DA0087DA66 /* DHAppDelegate.m in Sources */,
+				D7B44DF818D234DA0087DA66 /* DHFirstViewController.m in Sources */,
+				D7B44DFB18D234DA0087DA66 /* DHSecondViewController.m in Sources */,
+				D7B44DEE18D234DA0087DA66 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7B44DFE18D234DA0087DA66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7B44E1018D234DA0087DA66 /* ChatCatchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D7B44E0818D234DA0087DA66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7B44DDD18D234DA0087DA66 /* ChatCatch */;
+			targetProxy = D7B44E0718D234DA0087DA66 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D7B44DEA18D234DA0087DA66 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7B44DEB18D234DA0087DA66 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D7B44DF318D234DA0087DA66 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7B44DF418D234DA0087DA66 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D7B44E0C18D234DA0087DA66 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7B44E0D18D234DA0087DA66 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D7B44E1118D234DA0087DA66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D7B44E1218D234DA0087DA66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D7B44E1418D234DA0087DA66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChatCatch/ChatCatch-Prefix.pch";
+				INFOPLIST_FILE = "ChatCatch/ChatCatch-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D7B44E1518D234DA0087DA66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChatCatch/ChatCatch-Prefix.pch";
+				INFOPLIST_FILE = "ChatCatch/ChatCatch-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D7B44E1718D234DA0087DA66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ChatCatch.app/ChatCatch";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChatCatch/ChatCatch-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ChatCatchTests/ChatCatchTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D7B44E1818D234DA0087DA66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ChatCatch.app/ChatCatch";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChatCatch/ChatCatch-Prefix.pch";
+				INFOPLIST_FILE = "ChatCatchTests/ChatCatchTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D7B44DD918D234DA0087DA66 /* Build configuration list for PBXProject "ChatCatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7B44E1118D234DA0087DA66 /* Debug */,
+				D7B44E1218D234DA0087DA66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7B44E1318D234DA0087DA66 /* Build configuration list for PBXNativeTarget "ChatCatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7B44E1418D234DA0087DA66 /* Debug */,
+				D7B44E1518D234DA0087DA66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D7B44E1618D234DA0087DA66 /* Build configuration list for PBXNativeTarget "ChatCatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7B44E1718D234DA0087DA66 /* Debug */,
+				D7B44E1818D234DA0087DA66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D7B44DD618D234DA0087DA66 /* Project object */;
+}
