@@ -24,6 +24,15 @@
 }
 
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"TimelineTableViewController"])
+    {
+        [self setTableViewController:(DHTimelineTableViewController *)[segue destinationViewController]];
+    }
+}
+
+
 #pragma mark - Memory Management
 - (void)didReceiveMemoryWarning
 {
