@@ -7,19 +7,24 @@
 //
 
 #import "DHTimelineController.h"
+#import "DHTimelineTableViewController.h"
 
 @interface DHTimelineController ()
 
 @end
 
+
 @implementation DHTimelineController
 
+
+#pragma mark - View Lifecycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
+
+#pragma mark - Memory Management
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

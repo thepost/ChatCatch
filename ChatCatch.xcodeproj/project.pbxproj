@@ -22,6 +22,8 @@
 		D7B44E0618D234DA0087DA66 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B44DE518D234DA0087DA66 /* UIKit.framework */; };
 		D7B44E0E18D234DA0087DA66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7B44E0C18D234DA0087DA66 /* InfoPlist.strings */; };
 		D7B44E1018D234DA0087DA66 /* ChatCatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B44E0F18D234DA0087DA66 /* ChatCatchTests.m */; };
+		D7D0476F18D24CBE00BE3075 /* DHTimelineDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D0476E18D24CBE00BE3075 /* DHTimelineDatasource.m */; };
+		D7D0477518D24DC600BE3075 /* DHTimelineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D0477418D24DC600BE3075 /* DHTimelineTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		D7B44E0B18D234DA0087DA66 /* ChatCatchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChatCatchTests-Info.plist"; sourceTree = "<group>"; };
 		D7B44E0D18D234DA0087DA66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D7B44E0F18D234DA0087DA66 /* ChatCatchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatCatchTests.m; sourceTree = "<group>"; };
+		D7D0476D18D24CBE00BE3075 /* DHTimelineDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTimelineDatasource.h; sourceTree = "<group>"; };
+		D7D0476E18D24CBE00BE3075 /* DHTimelineDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTimelineDatasource.m; sourceTree = "<group>"; };
+		D7D0477318D24DC600BE3075 /* DHTimelineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTimelineTableViewController.h; sourceTree = "<group>"; };
+		D7D0477418D24DC600BE3075 /* DHTimelineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTimelineTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,10 @@
 			children = (
 				D7B44DF618D234DA0087DA66 /* DHTimelineController.h */,
 				D7B44DF718D234DA0087DA66 /* DHTimelineController.m */,
+				D7D0476D18D24CBE00BE3075 /* DHTimelineDatasource.h */,
+				D7D0477318D24DC600BE3075 /* DHTimelineTableViewController.h */,
+				D7D0477418D24DC600BE3075 /* DHTimelineTableViewController.m */,
+				D7D0476E18D24CBE00BE3075 /* DHTimelineDatasource.m */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -289,8 +299,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7B44DF218D234DA0087DA66 /* DHAppDelegate.m in Sources */,
+				D7D0476F18D24CBE00BE3075 /* DHTimelineDatasource.m in Sources */,
 				D7B44DF818D234DA0087DA66 /* DHTimelineController.m in Sources */,
 				D7B44DFB18D234DA0087DA66 /* DHConversationsController.m in Sources */,
+				D7D0477518D24DC600BE3075 /* DHTimelineTableViewController.m in Sources */,
 				D7B44DEE18D234DA0087DA66 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +509,7 @@
 				D7B44E1518D234DA0087DA66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7B44E1618D234DA0087DA66 /* Build configuration list for PBXNativeTarget "ChatCatchTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +518,7 @@
 				D7B44E1818D234DA0087DA66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

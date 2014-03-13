@@ -6,7 +6,11 @@
 //  Copyright (c) 2014 Dashend. All rights reserved.
 //
 
+@class DHTimelineTableViewController;
 
-@interface DHTimelineController : UIViewController
+@interface DHTimelineController : UIViewController {
+}
+
+@property (nonatomic, strong) DHTimelineTableViewController *tableViewController;
 
 @end
