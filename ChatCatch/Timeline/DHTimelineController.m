@@ -44,7 +44,7 @@
 - (void)alertTwitterSignIn
 {
     UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"Twitter Unavailable"
-                                                        message:@"Please sign in to at least 1 account in Settings -> Twitter"
+                                                        message:@"Please sign in to at least 1 account in Settings -> Twitter. Then enable access."
                                                        delegate:nil
                                               cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil];
@@ -57,16 +57,31 @@
 {
     //1. Pull data from Twitter...
     BOOL twitterEnabled = [_twitterRequest isTwitterEnabled];
-    
+        
     if (twitterEnabled == YES)
     {
-        //2. Call DHTimelineTableViewController's reloadWithTimelineData:
-        
-        //3. DHTimelineTableViewController passes data to DHTimelineDatasource
-        
-        //4. DHTimelineDatasource sets each element in the data array as a TweeterStatus object
-        
-        //5. DHTimelineTableViewController refreshes its table view.
+        //2. Now check if we have access...
+        [_twitterRequest requestAccess:^(id response)
+        {
+            //3a. Make the request...
+            [_twitterRequest requestTimeline:^(id response)
+            {
+                //4. Call DHTimelineTableViewController's reloadWithTimelineData:
+                
+                //5. DHTimelineTableViewController passes data to DHTimelineDatasource
+                
+                //6. DHTimelineDatasource sets each element in the data array as a TweeterStatus object
+                
+                //7. DHTimelineTableViewController refreshes its table view.
+            }
+                                      failed:^(NSError *error) {
+                                          
+                                      }];
+        }
+                                failed:^(NSError *error) {
+                                    //3b. Inform that no access was given...
+                                    [self alertTwitterSignIn];
+                                }];
     }
     else {
         [self alertTwitterSignIn];

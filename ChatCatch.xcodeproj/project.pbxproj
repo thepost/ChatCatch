@@ -43,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D7114DBF18D378410045E8AE /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		D71DEC2818D29FF800486AE9 /* TweeterStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweeterStatus.h; sourceTree = "<group>"; };
 		D71DEC2918D29FF800486AE9 /* TweeterStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweeterStatus.m; sourceTree = "<group>"; };
 		D71DEC2B18D2A99F00486AE9 /* TwitterUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterUser.h; sourceTree = "<group>"; };
@@ -139,6 +140,7 @@
 		D7B44DE018D234DA0087DA66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7114DBF18D378410045E8AE /* Twitter.framework */,
 				D7B9902818D32B5C00C92A42 /* Accounts.framework */,
 				D7B9902618D32B5500C92A42 /* Social.framework */,
 				D7B44DE118D234DA0087DA66 /* Foundation.framework */,

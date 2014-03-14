@@ -33,6 +33,12 @@ typedef void(^DHRequestFailBlock)(NSError *error);
 
 /**
  @param
+ @param 
+ */
+- (void)requestAccess:(DHRequestSuccessBlock)success failed:(DHRequestFailBlock)fail;
+
+/**
+ @param
  @param
  */
 - (void)requestTimeline:(DHRequestSuccessBlock)success failed:(DHRequestFailBlock)fail;

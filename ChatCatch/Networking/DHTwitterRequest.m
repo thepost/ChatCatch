@@ -54,9 +54,56 @@ NSString *const TWITTER_URL_ROOT = @"https://api.twitter.com/1.1/";
 }
 
 
+- (void)requestAccess:(DHRequestSuccessBlock)success failed:(DHRequestFailBlock)fail;
+{
+    if (self.accountStore == nil) {
+        self.accountStore = [[ACAccountStore alloc] init];
+    }
+    
+    ACAccountType *twitterAccount = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    
+    [self.accountStore requestAccessToAccountsWithType:twitterAccount
+                                               options:nil
+                                            completion:^(BOOL granted, NSError *error)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^()
+        {
+            if (granted == YES) {
+                success(nil);
+            }
+            else {
+                fail(error);
+            }
+        });
+    }];
+}
+
+
 - (void)requestTimeline:(DHRequestSuccessBlock)success failed:(DHRequestFailBlock)fail;
 {
+    NSURL *twitterURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@statuses/home_timeline.json", TWITTER_URL_ROOT]];
     
+    NSDictionary *params = @{@"count": @"10"};
+//                             @"contributor_details": @"true"};
+    
+    SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                            requestMethod:SLRequestMethodGET
+                                                      URL:twitterURL
+                                               parameters:nil];
+    
+//    [request setAccount:<#(ACAccount *)#>]
+    
+    [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error)
+    {
+        if ((responseData) && (urlResponse.statusCode == 200))
+        {
+            //Convert to JSON...
+            NSError *jsonError = nil;
+            NSArray *tweets = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&jsonError];
+            
+            NSLog(@"Tweets: %@", tweets);
+        }
+    }];
 }
 
 
