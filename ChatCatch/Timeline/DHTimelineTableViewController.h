@@ -11,6 +11,12 @@
 @interface DHTimelineTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource> {
 }
 
+/**
+ */
 @property (nonatomic, strong) DHTimelineDatasource *timelineDatasource;
+
+/**
+ */
+- (void)reloadWithTimelineData:(NSArray *)timelineData;
 
 @end

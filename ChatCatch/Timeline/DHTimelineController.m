@@ -34,8 +34,17 @@
 
 
 #pragma mark - IBAction
-- (IBAction)refresh:(id)sender {
-    //Pull data from Twitter...
+- (IBAction)refresh:(id)sender
+{
+    //1. Pull data from Twitter...
+    
+    //2. Call DHTimelineTableViewController's reloadWithTimelineData:
+    
+    //3. DHTimelineTableViewController passes data to DHTimelineDatasource
+    
+    //4. DHTimelineDatasource sets each element in the data array as a TweeterStatus object
+    
+    //5. DHTimelineTableViewController refreshes its table view.
 }
 
 

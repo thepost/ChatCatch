@@ -25,6 +25,9 @@
 		D7B44E0618D234DA0087DA66 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B44DE518D234DA0087DA66 /* UIKit.framework */; };
 		D7B44E0E18D234DA0087DA66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7B44E0C18D234DA0087DA66 /* InfoPlist.strings */; };
 		D7B44E1018D234DA0087DA66 /* ChatCatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B44E0F18D234DA0087DA66 /* ChatCatchTests.m */; };
+		D7B9902418D329C800C92A42 /* DHTwitterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B9902318D329C800C92A42 /* DHTwitterRequest.m */; };
+		D7B9902718D32B5500C92A42 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B9902618D32B5500C92A42 /* Social.framework */; };
+		D7B9902918D32B5C00C92A42 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B9902818D32B5C00C92A42 /* Accounts.framework */; };
 		D7D0476F18D24CBE00BE3075 /* DHTimelineDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D0476E18D24CBE00BE3075 /* DHTimelineDatasource.m */; };
 		D7D0477518D24DC600BE3075 /* DHTimelineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D0477418D24DC600BE3075 /* DHTimelineTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -67,6 +70,10 @@
 		D7B44E0B18D234DA0087DA66 /* ChatCatchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChatCatchTests-Info.plist"; sourceTree = "<group>"; };
 		D7B44E0D18D234DA0087DA66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D7B44E0F18D234DA0087DA66 /* ChatCatchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatCatchTests.m; sourceTree = "<group>"; };
+		D7B9902218D329C800C92A42 /* DHTwitterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTwitterRequest.h; sourceTree = "<group>"; };
+		D7B9902318D329C800C92A42 /* DHTwitterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTwitterRequest.m; sourceTree = "<group>"; };
+		D7B9902618D32B5500C92A42 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		D7B9902818D32B5C00C92A42 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		D7D0476D18D24CBE00BE3075 /* DHTimelineDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTimelineDatasource.h; sourceTree = "<group>"; };
 		D7D0476E18D24CBE00BE3075 /* DHTimelineDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTimelineDatasource.m; sourceTree = "<group>"; };
 		D7D0477318D24DC600BE3075 /* DHTimelineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTimelineTableViewController.h; sourceTree = "<group>"; };
@@ -78,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7B9902918D32B5C00C92A42 /* Accounts.framework in Frameworks */,
+				D7B9902718D32B5500C92A42 /* Social.framework in Frameworks */,
 				D7B44DE418D234DA0087DA66 /* CoreGraphics.framework in Frameworks */,
 				D7B44DE618D234DA0087DA66 /* UIKit.framework in Frameworks */,
 				D7B44DE218D234DA0087DA66 /* Foundation.framework in Frameworks */,
@@ -130,6 +139,8 @@
 		D7B44DE018D234DA0087DA66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7B9902818D32B5C00C92A42 /* Accounts.framework */,
+				D7B9902618D32B5500C92A42 /* Social.framework */,
 				D7B44DE118D234DA0087DA66 /* Foundation.framework */,
 				D7B44DE318D234DA0087DA66 /* CoreGraphics.framework */,
 				D7B44DE518D234DA0087DA66 /* UIKit.framework */,
@@ -143,6 +154,7 @@
 			children = (
 				D7B44DF018D234DA0087DA66 /* DHAppDelegate.h */,
 				D7B44DF118D234DA0087DA66 /* DHAppDelegate.m */,
+				D7B9902118D329B400C92A42 /* Networking */,
 				D7B44E1D18D236CF0087DA66 /* Storyboards */,
 				D71DEC2718D29F3200486AE9 /* Objects */,
 				D7B44E1918D235520087DA66 /* Conversations */,
@@ -221,6 +233,15 @@
 			);
 			name = Storyboards;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		D7B9902118D329B400C92A42 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D7B9902218D329C800C92A42 /* DHTwitterRequest.h */,
+				D7B9902318D329C800C92A42 /* DHTwitterRequest.m */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7B44DF218D234DA0087DA66 /* DHAppDelegate.m in Sources */,
+				D7B9902418D329C800C92A42 /* DHTwitterRequest.m in Sources */,
 				D7D0476F18D24CBE00BE3075 /* DHTimelineDatasource.m in Sources */,
 				D71DEC2D18D2A99F00486AE9 /* TwitterUser.m in Sources */,
 				D7B44DF818D234DA0087DA66 /* DHTimelineController.m in Sources */,

@@ -6,12 +6,17 @@
 //  Copyright (c) 2014 Dashend. All rights reserved.
 //
 
+
 @class DHTimelineTableViewController;
+@class DHTwitterRequest;
+
 
 @interface DHTimelineController : UIViewController {
 }
 
 @property (nonatomic, strong) DHTimelineTableViewController *tableViewController;
+
+@property (nonatomic, strong) DHTwitterRequest *twitterRequest;
 
 - (IBAction)refresh:(id)sender;
 
