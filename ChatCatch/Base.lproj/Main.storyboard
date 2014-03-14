@@ -17,16 +17,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dcv-GQ-f4n">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="IyH-it-8sm" kind="embed" identifier="TimelineTableViewController" id="LW2-PV-Zwy"/>
                                 </connections>
                             </containerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHY-PV-ChW">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.67450980390000004" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="compose" id="Qjm-hs-7lp">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PHY-PV-ChW" firstAttribute="top" secondItem="2VE-Yg-loa" secondAttribute="top" constant="20" id="KgZ-kU-MyI"/>
                             <constraint firstAttribute="bottom" secondItem="Dcv-GQ-f4n" secondAttribute="bottom" constant="50" id="MAF-92-adU"/>
                         </constraints>
                     </view>
@@ -40,40 +51,30 @@
         <scene sceneID="hOZ-Cl-iU3">
             <objects>
                 <tableViewController id="IyH-it-8sm" customClass="DHTimelineTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="596-kx-NLH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="596-kx-NLH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.4918027324" green="0.77499522629999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <sections>
-                            <tableViewSection id="D9Y-yv-GfT">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="UdG-Eb-Rza">
-                                        <rect key="frame" x="0.0" y="35" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UdG-Eb-Rza" id="cQx-0H-fMi">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TimelineCell" textLabel="hEH-TM-ScR" rowHeight="100" style="IBUITableViewCellStyleDefault" id="UdG-Eb-Rza">
+                                <rect key="frame" x="0.0" y="22" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UdG-Eb-Rza" id="cQx-0H-fMi">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Tweet!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hEH-TM-ScR">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vUt-zr-03V">
-                                        <rect key="frame" x="0.0" y="79" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vUt-zr-03V" id="y1n-c0-Ui0">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ZjF-AQ-tL7">
-                                        <rect key="frame" x="0.0" y="123" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZjF-AQ-tL7" id="ap1-9j-zLD">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="IyH-it-8sm" id="vHO-9E-7I5"/>
                             <outlet property="delegate" destination="IyH-it-8sm" id="Wig-Oa-I3J"/>

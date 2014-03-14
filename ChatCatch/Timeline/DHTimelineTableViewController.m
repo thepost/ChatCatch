@@ -18,11 +18,12 @@
 @implementation DHTimelineTableViewController
 
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithStyle:style];
+    self = [super initWithCoder:aDecoder];
+
     if (self) {
-        // Custom initialization
+        self.timelineDatasource = [[DHTimelineDatasource alloc] initWithArray:@[@"Alison", @"Mike"]];
     }
     return self;
 }
@@ -37,33 +38,38 @@
 }
 
 
-#pragma mark - Table view data source
+#pragma mark - UITableViewDataSource
 
-/*
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    NSInteger numRows = [_timelineDatasource numberOfTweets];
+    
+    if (numRows == 0) {
+#warning TODO: Handle error!
+    }
+    return numRows;
+
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimelineCell"
+                                                            forIndexPath:indexPath];
     
-    // Configure the cell...
+    //Configure the cell...
+#warning TODO: UserTweet *tweetStatus = [_timelineDatasource tweetAtIndex:indexPath.row];
+    NSString *tweetStatus = [_timelineDatasource tweetAtIndex:indexPath.row];
+    
+    [[cell textLabel] setText:tweetStatus];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -103,16 +109,12 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-*/
 
 
 #pragma mark - Memory Management

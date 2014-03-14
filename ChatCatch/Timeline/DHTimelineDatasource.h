@@ -6,8 +6,25 @@
 //  Copyright (c) 2014 Dashend. All rights reserved.
 //
 
+@class UserTweet;
 
-@interface DHTimelineDatasource : NSObject <UITableViewDataSource> {
-}
+@interface DHTimelineDatasource : NSObject //<UITableViewDataSource> {}
+
+/**
+ */
+@property (nonatomic, strong) NSArray *timelineTweets;
+
+/**
+ */
+- (id)initWithArray:(NSArray *)tweetData;
+
+/** 
+ */
+//- (UserTweet *)tweetAtIndex:(NSInteger)index;
+- (id)tweetAtIndex:(NSInteger)index;
+
+/**
+ */
+- (NSInteger)numberOfTweets;
 
 @end

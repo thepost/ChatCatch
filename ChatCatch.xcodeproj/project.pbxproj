@@ -176,9 +176,9 @@
 			children = (
 				D7B44DF618D234DA0087DA66 /* DHTimelineController.h */,
 				D7B44DF718D234DA0087DA66 /* DHTimelineController.m */,
-				D7D0476D18D24CBE00BE3075 /* DHTimelineDatasource.h */,
 				D7D0477318D24DC600BE3075 /* DHTimelineTableViewController.h */,
 				D7D0477418D24DC600BE3075 /* DHTimelineTableViewController.m */,
+				D7D0476D18D24CBE00BE3075 /* DHTimelineDatasource.h */,
 				D7D0476E18D24CBE00BE3075 /* DHTimelineDatasource.m */,
 			);
 			path = Timeline;
