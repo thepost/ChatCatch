@@ -9,13 +9,13 @@
 #import "DHTimelineDatasource.h"
 #import "TweeterStatus.h"
 
-/*
+
 @interface DHTimelineDatasource()
 
-@property (nonatomic, strong) NSArray *mainTweets;
+@property (nonatomic, strong, readwrite) NSArray *timelineTweets;
 
 @end
- */
+
 
 @implementation DHTimelineDatasource
 
@@ -26,7 +26,7 @@
     
     if (self)
     {
-//        self.timelineTweets = [[NSArray alloc] init];
+        self.timelineTweets = [[NSArray alloc] init];
         
         if ([tweetData lastObject]) {
             [self setTimelineTweets:tweetData];
@@ -59,7 +59,14 @@
 - (void)setTweetsWithJSONArray:(NSArray *)jsonArray
 {
     //Set each element in the data array as a TweeterStatus object...
-    
+    if ([jsonArray lastObject]) {
+        [jsonArray enumerateObjectsUsingBlock:^(id tweetDetails, NSUInteger idx, BOOL *stop)
+        {
+            if ([[tweetDetails class] isSubclassOfClass:[NSDictionary class]]) {
+                
+            }
+        }];
+    }
 }
 
 
