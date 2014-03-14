@@ -108,7 +108,7 @@ NSString *const TWITTER_URL_ROOT = @"https://api.twitter.com/1.1/";
                                                               options:NSJSONReadingAllowFragments
                                                                 error:&jsonError];
             
-            if (([tweets lastObject]) && ([[tweets class] isSubclassOfClass:[NSArray class]])) {
+            if ([tweets lastObject]) {
                 success(tweets);
             }
             else {

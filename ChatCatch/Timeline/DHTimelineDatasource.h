@@ -27,4 +27,8 @@
  */
 - (NSInteger)numberOfTweets;
 
+/**
+ */
+- (void)setTweetsWithJSONArray:(NSArray *)jsonArray;
+
 @end

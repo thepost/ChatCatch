@@ -67,19 +67,18 @@
             [_twitterRequest requestTimeline:^(id response)
             {
                 //4. Call DHTimelineTableViewController's reloadWithTimelineData:
-                
-                //5. DHTimelineTableViewController passes data to DHTimelineDatasource
-                
-                //6. DHTimelineDatasource sets each element in the data array as a TweeterStatus object
-                
-                //7. DHTimelineTableViewController refreshes its table view.
+                if ([[response class] isSubclassOfClass:[NSArray class]])
+                {
+                    NSArray *tweets = (NSArray *)response;
+                    [self.tableViewController reloadWithTimelineData:tweets];
+                }
             }
                                       failed:^(NSError *error) {
-                                          
+                                          //3b. Handle error...
                                       }];
         }
                                 failed:^(NSError *error) {
-                                    //3b. Inform that no access was given...
+                                    //2b. Inform that no access was given...
                                     [self alertTwitterSignIn];
                                 }];
     }

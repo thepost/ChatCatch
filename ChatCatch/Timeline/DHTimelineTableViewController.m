@@ -39,6 +39,16 @@
 }
 
 
+- (void)reloadWithTimelineData:(NSArray *)timelineData
+{
+    //Pass data to DHTimelineDatasource...
+    [self.timelineDatasource setTweetsWithJSONArray:timelineData];
+    
+    //Reload table view...
+    [self.tableView reloadData];
+}
+
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

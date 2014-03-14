@@ -36,6 +36,7 @@
 }
 
 
+#pragma mark - Accessors
 - (id)tweetAtIndex:(NSInteger)index
 {
     id tweet = @"";
@@ -51,6 +52,14 @@
 - (NSInteger)numberOfTweets
 {
     return [self.timelineTweets count];
+}
+
+
+#pragma mark - Mutators
+- (void)setTweetsWithJSONArray:(NSArray *)jsonArray
+{
+    //Set each element in the data array as a TweeterStatus object...
+    
 }
 
 
