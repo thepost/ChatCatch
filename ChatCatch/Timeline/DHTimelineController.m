@@ -24,6 +24,10 @@
     [super viewDidLoad];
     
     self.twitterRequest = [DHTwitterRequest sharedInstance];
+    
+    if ([_twitterRequest isTwitterEnabled] == NO) {
+        [self alertTwitterSignIn];
+    }
 }
 
 
@@ -33,6 +37,18 @@
     {
         [self setTableViewController:(DHTimelineTableViewController *)[segue destinationViewController]];
     }
+}
+
+
+#pragma mark - Twitter
+- (void)alertTwitterSignIn
+{
+    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"Twitter Unavailable"
+                                                        message:@"Please sign in to at least 1 account in Settings -> Twitter"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+    [alertview show];
 }
 
 
@@ -53,7 +69,7 @@
         //5. DHTimelineTableViewController refreshes its table view.
     }
     else {
-        [self presentTwitterSignIn];
+        [self alertTwitterSignIn];
     }
 }
 

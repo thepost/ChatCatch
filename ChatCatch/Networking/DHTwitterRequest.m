@@ -21,6 +21,7 @@ NSString *const TWITTER_URL_ROOT = @"https://api.twitter.com/1.1/";
 @implementation DHTwitterRequest
 
 
+#pragma mark - Init
 + (DHTwitterRequest *)sharedInstance
 {
     static DHTwitterRequest *singleton = nil;
@@ -34,6 +35,18 @@ NSString *const TWITTER_URL_ROOT = @"https://api.twitter.com/1.1/";
 }
 
 
+- (id)init
+{
+    self = [super init];
+    
+    if (self) {
+        self.accountStore = [[ACAccountStore alloc] init];
+    }
+    return self;
+}
+
+
+#pragma mark - Auth & Requests
 - (BOOL)isTwitterEnabled
 {
     BOOL twitterEnabled = [SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter];
