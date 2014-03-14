@@ -83,25 +83,41 @@ NSString *const TWITTER_URL_ROOT = @"https://api.twitter.com/1.1/";
 {
     NSURL *twitterURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@statuses/home_timeline.json", TWITTER_URL_ROOT]];
     
-    NSDictionary *params = @{@"count": @"10"};
-//                             @"contributor_details": @"true"};
-    
+    NSDictionary *params = @{@"count": @"2",
+                             @"contributor_details": @"true"};
+
     SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
                                             requestMethod:SLRequestMethodGET
                                                       URL:twitterURL
-                                               parameters:nil];
+                                               parameters:params];
     
-//    [request setAccount:<#(ACAccount *)#>]
+    //Set the account to the request...
+    ACAccountType *twitterAccountType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+
+    ACAccount *twitterAccount = (ACAccount *)[[self.accountStore accountsWithAccountType:twitterAccountType] lastObject];
+    [request setAccount:twitterAccount];
     
+    //Make request...
     [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error)
     {
         if ((responseData) && (urlResponse.statusCode == 200))
         {
             //Convert to JSON...
             NSError *jsonError = nil;
-            NSArray *tweets = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&jsonError];
+            NSArray *tweets = [NSJSONSerialization JSONObjectWithData:responseData
+                                                              options:NSJSONReadingAllowFragments
+                                                                error:&jsonError];
             
-            NSLog(@"Tweets: %@", tweets);
+            if (([tweets lastObject]) && ([[tweets class] isSubclassOfClass:[NSArray class]])) {
+                success(tweets);
+            }
+            else {
+                fail(jsonError);
+            }
+        }
+        else {
+            NSLog(@"URL request not successful. Response code: %d", urlResponse.statusCode);
+            fail(error);
         }
     }];
 }
