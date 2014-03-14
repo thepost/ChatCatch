@@ -13,4 +13,8 @@
 
 @property (nonatomic, strong) DHTimelineTableViewController *tableViewController;
 
+- (IBAction)refresh:(id)sender;
+
+- (IBAction)compose:(id)sender;
+
 @end

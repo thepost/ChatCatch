@@ -29,8 +29,18 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.67450980390000004" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
+                                    <barButtonItem systemItem="refresh" id="3Xc-gN-D7c">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="refresh:" destination="CZ4-MO-1fc" id="aDF-Vy-x3e"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="bCx-My-4RS"/>
                                     <barButtonItem style="plain" systemItem="compose" id="Qjm-hs-7lp">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="compose:" destination="CZ4-MO-1fc" id="pmW-N0-9WG"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>

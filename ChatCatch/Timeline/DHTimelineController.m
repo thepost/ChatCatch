@@ -33,6 +33,17 @@
 }
 
 
+#pragma mark - IBAction
+- (IBAction)refresh:(id)sender {
+    //Pull data from Twitter...
+}
+
+
+- (IBAction)compose:(id)sender {
+    //Present Twitter view controller...
+}
+
+
 #pragma mark - Memory Management
 - (void)didReceiveMemoryWarning
 {

@@ -7,6 +7,7 @@
 //
 
 #import "DHTimelineDatasource.h"
+#import "TweeterStatus.h"
 
 /*
 @interface DHTimelineDatasource()
