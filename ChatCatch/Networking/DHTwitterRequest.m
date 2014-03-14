@@ -8,6 +8,15 @@
 
 #import "DHTwitterRequest.h"
 
+NSString *const TWITTER_URL_ROOT = @"https://api.twitter.com/1.1/";
+
+
+@interface DHTwitterRequest()
+
+@property (nonatomic, strong) ACAccountStore *accountStore;
+
+@end
+
 
 @implementation DHTwitterRequest
 
@@ -22,6 +31,19 @@
     });
     
     return singleton;
+}
+
+
+- (BOOL)isTwitterEnabled
+{
+    BOOL twitterEnabled = [SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter];
+    return twitterEnabled;
+}
+
+
+- (void)requestTimeline:(DHRequestSuccessBlock)success failed:(DHRequestFailBlock)fail;
+{
+    
 }
 
 

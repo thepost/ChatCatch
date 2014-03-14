@@ -8,6 +8,7 @@
 
 #import "DHTimelineController.h"
 #import "DHTimelineTableViewController.h"
+#import "DHTwitterRequest.h"
 
 @interface DHTimelineController ()
 
@@ -21,6 +22,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.twitterRequest = [DHTwitterRequest sharedInstance];
 }
 
 
@@ -37,14 +40,21 @@
 - (IBAction)refresh:(id)sender
 {
     //1. Pull data from Twitter...
+    BOOL twitterEnabled = [_twitterRequest isTwitterEnabled];
     
-    //2. Call DHTimelineTableViewController's reloadWithTimelineData:
-    
-    //3. DHTimelineTableViewController passes data to DHTimelineDatasource
-    
-    //4. DHTimelineDatasource sets each element in the data array as a TweeterStatus object
-    
-    //5. DHTimelineTableViewController refreshes its table view.
+    if (twitterEnabled == YES)
+    {
+        //2. Call DHTimelineTableViewController's reloadWithTimelineData:
+        
+        //3. DHTimelineTableViewController passes data to DHTimelineDatasource
+        
+        //4. DHTimelineDatasource sets each element in the data array as a TweeterStatus object
+        
+        //5. DHTimelineTableViewController refreshes its table view.
+    }
+    else {
+        [self presentTwitterSignIn];
+    }
 }
 
 

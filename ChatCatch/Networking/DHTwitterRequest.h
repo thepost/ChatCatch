@@ -9,6 +9,8 @@
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
 
+extern NSString *const TWITTER_URL_ROOT;
+
 /**
  Basic auth blocks.
  */
@@ -24,9 +26,15 @@ typedef void(^DHRequestFailBlock)(NSError *error);
  */
 + (DHTwitterRequest *)sharedInstance;
 
+/**
+ @return
+ */
+- (BOOL)isTwitterEnabled;
 
-//isTwitterEnabled
-
-//
+/**
+ @param
+ @param
+ */
+- (void)requestTimeline:(DHRequestSuccessBlock)success failed:(DHRequestFailBlock)fail;
 
 @end

@@ -11,15 +11,32 @@
 @class DHTwitterRequest;
 
 
+/**
+ The root view controller for all things timeline related. Manages the main table view controller, twitter auth and requests,
+ and user actions for compose and reload.
+ */
 @interface DHTimelineController : UIViewController {
 }
 
+/**
+ */
 @property (nonatomic, strong) DHTimelineTableViewController *tableViewController;
 
+/**
+ */
 @property (nonatomic, strong) DHTwitterRequest *twitterRequest;
 
+
+/**
+ */
+- (void)presentTwitterSignIn;
+
+/**
+ */
 - (IBAction)refresh:(id)sender;
 
+/**
+ */
 - (IBAction)compose:(id)sender;
 
 @end
