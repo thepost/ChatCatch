@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D71DEC2A18D29FF800486AE9 /* TweeterStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = D71DEC2918D29FF800486AE9 /* TweeterStatus.m */; };
+		D71DEC2D18D2A99F00486AE9 /* TwitterUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D71DEC2C18D2A99F00486AE9 /* TwitterUser.m */; };
 		D7B44DE218D234DA0087DA66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B44DE118D234DA0087DA66 /* Foundation.framework */; };
 		D7B44DE418D234DA0087DA66 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B44DE318D234DA0087DA66 /* CoreGraphics.framework */; };
 		D7B44DE618D234DA0087DA66 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B44DE518D234DA0087DA66 /* UIKit.framework */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D71DEC2818D29FF800486AE9 /* TweeterStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweeterStatus.h; sourceTree = "<group>"; };
+		D71DEC2918D29FF800486AE9 /* TweeterStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweeterStatus.m; sourceTree = "<group>"; };
+		D71DEC2B18D2A99F00486AE9 /* TwitterUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterUser.h; sourceTree = "<group>"; };
+		D71DEC2C18D2A99F00486AE9 /* TwitterUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterUser.m; sourceTree = "<group>"; };
 		D7B44DDE18D234DA0087DA66 /* ChatCatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatCatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7B44DE118D234DA0087DA66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D7B44DE318D234DA0087DA66 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -88,6 +94,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D71DEC2718D29F3200486AE9 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				D71DEC2818D29FF800486AE9 /* TweeterStatus.h */,
+				D71DEC2918D29FF800486AE9 /* TweeterStatus.m */,
+				D71DEC2B18D2A99F00486AE9 /* TwitterUser.h */,
+				D71DEC2C18D2A99F00486AE9 /* TwitterUser.m */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
 		D7B44DD518D234DA0087DA66 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +141,7 @@
 				D7B44DF018D234DA0087DA66 /* DHAppDelegate.h */,
 				D7B44DF118D234DA0087DA66 /* DHAppDelegate.m */,
 				D7B44E1D18D236CF0087DA66 /* Storyboards */,
+				D71DEC2718D29F3200486AE9 /* Objects */,
 				D7B44E1918D235520087DA66 /* Conversations */,
 				D7B44E1B18D235520087DA66 /* Timeline */,
 				D7B44E1C18D235520087DA66 /* Views */,
@@ -300,10 +318,12 @@
 			files = (
 				D7B44DF218D234DA0087DA66 /* DHAppDelegate.m in Sources */,
 				D7D0476F18D24CBE00BE3075 /* DHTimelineDatasource.m in Sources */,
+				D71DEC2D18D2A99F00486AE9 /* TwitterUser.m in Sources */,
 				D7B44DF818D234DA0087DA66 /* DHTimelineController.m in Sources */,
 				D7B44DFB18D234DA0087DA66 /* DHConversationsController.m in Sources */,
 				D7D0477518D24DC600BE3075 /* DHTimelineTableViewController.m in Sources */,
 				D7B44DEE18D234DA0087DA66 /* main.m in Sources */,
+				D71DEC2A18D29FF800486AE9 /* TweeterStatus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Dashend. All rights reserved.
 //
 
-@class UserTweet;
+@class TweeterStatus;
 
 @interface DHTimelineDatasource : NSObject //<UITableViewDataSource> {}
 
@@ -20,7 +20,7 @@
 
 /** 
  */
-//- (UserTweet *)tweetAtIndex:(NSInteger)index;
+//- (TweeterStatus *)tweetAtIndex:(NSInteger)index;
 - (id)tweetAtIndex:(NSInteger)index;
 
 /**

@@ -62,10 +62,10 @@
                                                             forIndexPath:indexPath];
     
     //Configure the cell...
-#warning TODO: UserTweet *tweetStatus = [_timelineDatasource tweetAtIndex:indexPath.row];
-    NSString *tweetStatus = [_timelineDatasource tweetAtIndex:indexPath.row];
+#warning TODO: TweeterStatus *status = [_timelineDatasource tweetAtIndex:indexPath.row];
+    NSString *status = [_timelineDatasource tweetAtIndex:indexPath.row];
     
-    [[cell textLabel] setText:tweetStatus];
+    [[cell textLabel] setText:status];
     
     return cell;
 }
