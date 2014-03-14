@@ -8,6 +8,7 @@
 
 #import "DHTimelineTableViewController.h"
 #import "DHTimelineDatasource.h"
+#import "DHTimelineTableViewCell.h"
 
 
 @interface DHTimelineTableViewController ()
@@ -56,16 +57,16 @@
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (DHTimelineTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimelineCell"
-                                                            forIndexPath:indexPath];
+    DHTimelineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimelineCell"
+                                                                    forIndexPath:indexPath];
     
     //Configure the cell...
 #warning TODO: TweeterStatus *status = [_timelineDatasource tweetAtIndex:indexPath.row];
     NSString *status = [_timelineDatasource tweetAtIndex:indexPath.row];
     
-    [[cell textLabel] setText:status];
+    [[cell statusLabel] setText:status];
     
     return cell;
 }

@@ -8,7 +8,7 @@
 
 @class TweeterStatus;
 
-@interface DHTimelineDatasource : NSObject //<UITableViewDataSource> {}
+@interface DHTimelineDatasource : NSObject
 
 /**
  */

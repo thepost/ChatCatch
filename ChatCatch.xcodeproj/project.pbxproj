@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D71DEC2A18D29FF800486AE9 /* TweeterStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = D71DEC2918D29FF800486AE9 /* TweeterStatus.m */; };
 		D71DEC2D18D2A99F00486AE9 /* TwitterUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D71DEC2C18D2A99F00486AE9 /* TwitterUser.m */; };
+		D71DEC3018D2B4FD00486AE9 /* DHTimelineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71DEC2F18D2B4FD00486AE9 /* DHTimelineTableViewCell.m */; };
 		D7B44DE218D234DA0087DA66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B44DE118D234DA0087DA66 /* Foundation.framework */; };
 		D7B44DE418D234DA0087DA66 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B44DE318D234DA0087DA66 /* CoreGraphics.framework */; };
 		D7B44DE618D234DA0087DA66 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B44DE518D234DA0087DA66 /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 		D71DEC2918D29FF800486AE9 /* TweeterStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweeterStatus.m; sourceTree = "<group>"; };
 		D71DEC2B18D2A99F00486AE9 /* TwitterUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterUser.h; sourceTree = "<group>"; };
 		D71DEC2C18D2A99F00486AE9 /* TwitterUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterUser.m; sourceTree = "<group>"; };
+		D71DEC2E18D2B4FD00486AE9 /* DHTimelineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTimelineTableViewCell.h; sourceTree = "<group>"; };
+		D71DEC2F18D2B4FD00486AE9 /* DHTimelineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTimelineTableViewCell.m; sourceTree = "<group>"; };
 		D7B44DDE18D234DA0087DA66 /* ChatCatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatCatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7B44DE118D234DA0087DA66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D7B44DE318D234DA0087DA66 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -198,6 +201,8 @@
 				D7D0477418D24DC600BE3075 /* DHTimelineTableViewController.m */,
 				D7D0476D18D24CBE00BE3075 /* DHTimelineDatasource.h */,
 				D7D0476E18D24CBE00BE3075 /* DHTimelineDatasource.m */,
+				D71DEC2E18D2B4FD00486AE9 /* DHTimelineTableViewCell.h */,
+				D71DEC2F18D2B4FD00486AE9 /* DHTimelineTableViewCell.m */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				D7B44DF818D234DA0087DA66 /* DHTimelineController.m in Sources */,
 				D7B44DFB18D234DA0087DA66 /* DHConversationsController.m in Sources */,
 				D7D0477518D24DC600BE3075 /* DHTimelineTableViewController.m in Sources */,
+				D71DEC3018D2B4FD00486AE9 /* DHTimelineTableViewCell.m in Sources */,
 				D7B44DEE18D234DA0087DA66 /* main.m in Sources */,
 				D71DEC2A18D29FF800486AE9 /* TweeterStatus.m in Sources */,
 			);
