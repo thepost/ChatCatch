@@ -12,7 +12,7 @@
 
 @interface DHTimelineDatasource()
 
-@property (nonatomic, strong, readwrite) NSArray *timelineTweets;
+@property (nonatomic, strong, readwrite) NSMutableArray *timelineTweets;
 
 @end
 
@@ -26,10 +26,8 @@
     
     if (self)
     {
-        self.timelineTweets = [[NSArray alloc] init];
-        
         if ([tweetData lastObject]) {
-            [self setTimelineTweets:tweetData];
+            self.timelineTweets = [[NSMutableArray alloc] initWithArray:tweetData];
         }
     }
     return self;
@@ -58,12 +56,31 @@
 #pragma mark - Mutators
 - (void)setTweetsWithJSONArray:(NSArray *)jsonArray
 {
+    [self.timelineTweets removeAllObjects];
+    
     //Set each element in the data array as a TweeterStatus object...
     if ([jsonArray lastObject]) {
         [jsonArray enumerateObjectsUsingBlock:^(id tweetDetails, NSUInteger idx, BOOL *stop)
         {
-            if ([[tweetDetails class] isSubclassOfClass:[NSDictionary class]]) {
+            if ([[tweetDetails class] isSubclassOfClass:[NSDictionary class]])
+            {
+                //Set TwitterUser...
+                TwitterUser *user = [[TwitterUser alloc] init];
                 
+                NSDictionary *tweetDict = (NSDictionary *)tweetDetails;
+                NSDictionary *userDict = [tweetDict objectForKey:@"user"];
+                
+                [user setName:[userDict objectForKey:@"name"]];
+                [user setScreenName:[userDict objectForKey:@"screen_name"]];
+                
+                NSURL *imageURL = [NSURL URLWithString:[userDict objectForKey:@"profile_image_url"]];
+                [user setProfileImageNormalURL:imageURL];
+                
+                //Set TweeterStatus...
+                TweeterStatus *status = [[TweeterStatus alloc] initWithUser:user];
+                
+                //Add TweeterStatus to timelineTweets structure...
+                [self.timelineTweets addObject:status];
             }
         }];
     }

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Dashend. All rights reserved.
 //
 
-@class TwitterUser;
+#import "TwitterUser.h"
 
 /**
  This would subclass NSManagedObject if using core data.

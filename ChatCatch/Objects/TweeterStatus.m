@@ -7,7 +7,6 @@
 //
 
 #import "TweeterStatus.h"
-#import "TwitterUser.h"
 
 
 @implementation TweeterStatus

@@ -12,7 +12,7 @@
 
 /**
  */
-@property (nonatomic, strong, readonly) NSArray *timelineTweets;
+@property (nonatomic, strong, readonly) NSMutableArray *timelineTweets;
 
 /**
  */

@@ -25,4 +25,9 @@
  */
 @property (nonatomic, strong) UIImage *profileImageNormal;
 
+/**
+ A URL to the thumb image.
+ */
+@property (nonatomic, strong) NSURL *profileImageNormalURL;
+
 @end
