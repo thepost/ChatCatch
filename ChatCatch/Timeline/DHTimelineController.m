@@ -17,6 +17,11 @@
  */
 - (void)alertTweetDeletion:(NSError *)error;
 
+/**
+ Deletes the most recent tweet after the timer has been fired.
+ */
+- (void)autoDeleteTweet:(NSTimer*)theTimer;
+
 @end
 
 
@@ -81,12 +86,30 @@
 }
 
 
+- (void)autoDeleteTweet:(NSTimer*)theTimer
+{
+    NSDictionary *tweet = [theTimer userInfo];
+    
+    if (tweet) {
+        [_twitterRequest deleteTweetWithID:[tweet objectForKey:@"id"]
+                                   success:^(id response) {
+                                       [self alertTweetDeletion:nil];
+                                       [self refresh:nil];
+                                   }
+                                    failed:^(NSError *error) {
+                                        [self alertTweetDeletion:error];
+                                        NSLog(@"Error with deleting tweet: %@", [error description]);
+                                    }];
+    }
+}
+
+
 #pragma mark - IBAction
 - (IBAction)refresh:(id)sender
 {
     //1. Pull data from Twitter...
     BOOL twitterEnabled = [_twitterRequest isTwitterEnabled];
-        
+    
     if (twitterEnabled == YES)
     {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
@@ -146,15 +169,11 @@
                 
                     if (tweet) {
                         //Set up 60 second delay...
-                        [_twitterRequest deleteTweetWithID:[tweet objectForKey:@"id"]
-                                                   success:^(id response) {
-                                                       [self alertTweetDeletion:nil];
-                                                       [self refresh:nil];
-                                                   }
-                                                    failed:^(NSError *error) {
-                                                        [self alertTweetDeletion:error];
-                                                        NSLog(@"Error with deleting tweet: %@", [error description]);
-                                                    }];
+                        [NSTimer scheduledTimerWithTimeInterval:60
+                                                        target:self
+                                                        selector:@selector(autoDeleteTweet:)
+                                                        userInfo:tweet
+                                                        repeats:NO];
                     }
                 }
             }
