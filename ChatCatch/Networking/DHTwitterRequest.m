@@ -166,12 +166,18 @@ NSString *const TWITTER_URL_ROOT = @"https://api.twitter.com/1.1/";
                             {
                                 //Convert to JSON...
                                 NSError *jsonError = nil;
-                                NSArray *tweets = [NSJSONSerialization JSONObjectWithData:responseData
-                                                                                  options:NSJSONReadingMutableContainers
-                                                                                    error:&jsonError];
-                                
-                                if ([tweets lastObject]) {
-                                    success(tweets);
+                                id tweetData = [NSJSONSerialization JSONObjectWithData:responseData
+                                                                               options:NSJSONReadingMutableContainers
+                                                                                 error:&jsonError];
+                                if (tweetData) {
+                                    if ([[tweetData class] isSubclassOfClass:[NSArray class]]) {
+                                        NSArray *tweets = (NSArray *)tweetData;
+                                        success(tweets);
+                                    }
+                                    else if ([[tweetData class] isSubclassOfClass:[NSDictionary class]]) {
+                                        NSDictionary *tweets = (NSDictionary *)tweetData;
+                                        success(tweets);
+                                    }
                                 }
                                 else {
                                     fail(jsonError);

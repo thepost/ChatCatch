@@ -12,6 +12,11 @@
 
 @interface DHTimelineController ()
 
+/**
+ Called after the recent tweet deletion has been attempted.
+ */
+- (void)alertTweetDeletion:(NSError *)error;
+
 @end
 
 
@@ -48,6 +53,27 @@
 {
     UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"Twitter Unavailable"
                                                         message:@"Please sign in to at least 1 account in Settings -> Twitter. Then enable access."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+    [alertview show];
+}
+
+
+- (void)alertTweetDeletion:(NSError *)error
+{
+    NSString *title = @"60 Seconds Alert";
+    NSString *message;
+    
+    if (error == nil) {
+        message = @"Your recent Tweet has been deleted!";
+    }
+    else {
+        message = [NSString stringWithFormat:@"There was a problem with deleting your recent Tweet: %@", [error description]];
+    }
+    
+    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:title
+                                                        message:message
                                                        delegate:nil
                                               cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil];
@@ -119,9 +145,16 @@
                     NSDictionary *tweet = [(NSArray *)response lastObject];
                 
                     if (tweet) {
+                        //Set up 60 second delay...
                         [_twitterRequest deleteTweetWithID:[tweet objectForKey:@"id"]
-                                                   success:NULL
-                                                    failed:NULL];
+                                                   success:^(id response) {
+                                                       [self alertTweetDeletion:nil];
+                                                       [self refresh:nil];
+                                                   }
+                                                    failed:^(NSError *error) {
+                                                        [self alertTweetDeletion:error];
+                                                        NSLog(@"Error with deleting tweet: %@", [error description]);
+                                                    }];
                     }
                 }
             }
