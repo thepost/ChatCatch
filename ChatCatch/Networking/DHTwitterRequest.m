@@ -83,7 +83,7 @@ NSString *const TWITTER_URL_ROOT = @"https://api.twitter.com/1.1/";
 {
     NSURL *twitterURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@statuses/home_timeline.json", TWITTER_URL_ROOT]];
     
-    NSDictionary *params = @{@"count": @"10",
+    NSDictionary *params = @{@"count": @"50",
                              @"contributor_details": @"true"};
 
     SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
@@ -100,25 +100,29 @@ NSString *const TWITTER_URL_ROOT = @"https://api.twitter.com/1.1/";
     //Make request...
     [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error)
     {
-        if ((responseData) && (urlResponse.statusCode == 200))
+        dispatch_async(dispatch_get_main_queue(), ^()
         {
-            //Convert to JSON...
-            NSError *jsonError = nil;
-            NSArray *tweets = [NSJSONSerialization JSONObjectWithData:responseData
-                                                              options:NSJSONReadingMutableContainers
-                                                                error:&jsonError];
-            
-            if ([tweets lastObject]) {
-                success(tweets);
+            if ((responseData) && (urlResponse.statusCode == 200))
+            {
+                //Convert to JSON...
+                NSError *jsonError = nil;
+                NSArray *tweets = [NSJSONSerialization JSONObjectWithData:responseData
+                                                                  options:NSJSONReadingMutableContainers
+                                                                    error:&jsonError];
+                
+                if ([tweets lastObject]) {
+                    success(tweets);
+                }
+                else {
+                    fail(jsonError);
+                }
+             
             }
             else {
-                fail(jsonError);
+                NSLog(@"URL request not successful. Response code: %d", urlResponse.statusCode);
+                fail(error);
             }
-        }
-        else {
-            NSLog(@"URL request not successful. Response code: %d", urlResponse.statusCode);
-            fail(error);
-        }
+        });
     }];
 }
 
