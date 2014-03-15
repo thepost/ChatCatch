@@ -27,20 +27,38 @@ typedef void(^DHRequestFailBlock)(NSError *error);
 + (DHTwitterRequest *)sharedInstance;
 
 /**
- @return
+ Checks SLComposeViewController to see if twitter accounts are enabled in settings.
+ @return 
  */
 - (BOOL)isTwitterEnabled;
 
 /**
- @param
- @param 
+ Checks ACAccountType to see if the app has been enabled for use with Twitter.
+ @param success block executed with a response of 200.
+ @param fail block executed with any errors or a different response.
  */
 - (void)requestAccess:(DHRequestSuccessBlock)success failed:(DHRequestFailBlock)fail;
 
 /**
- @param
- @param
+ Retrieves the 50 most recent tweets from the Twitter API.
+ @param success block executed with a response of 200.
+ @param fail block executed with any errors or a different response.
  */
 - (void)requestTimeline:(DHRequestSuccessBlock)success failed:(DHRequestFailBlock)fail;
+
+/**
+ Gets the last tweet by specifying a count of 1 in the parameters from the Twitter API.
+ @param success block executed with a response of 200.
+ @param fail block executed with any errors or a different response.
+ */
+- (void)requestLatestTweet:(DHRequestSuccessBlock)success failed:(DHRequestFailBlock)fail;
+
+/**
+ Deletes the tweet if the tweetID is matched.
+ @param tweetID the ID to delete.
+ @param success block executed with a response of 200.
+ @param fail block executed with any errors or a different response.
+ */
+- (void)deleteTweetWithID:(NSString *)tweetID success:(DHRequestSuccessBlock)success failed:(DHRequestFailBlock)fail;
 
 @end

@@ -15,6 +15,8 @@ NSString *const TWITTER_URL_ROOT = @"https://api.twitter.com/1.1/";
 
 @property (nonatomic, strong) ACAccountStore *accountStore;
 
+- (void)performRequest:(SLRequest *)request success:(DHRequestSuccessBlock)success failed:(DHRequestFailBlock)fail;
+
 @end
 
 
@@ -97,33 +99,91 @@ NSString *const TWITTER_URL_ROOT = @"https://api.twitter.com/1.1/";
     ACAccount *twitterAccount = (ACAccount *)[[self.accountStore accountsWithAccountType:twitterAccountType] lastObject];
     [request setAccount:twitterAccount];
     
-    //Make request...
+    [self performRequest:request
+                 success:success
+                  failed:fail];
+}
+
+
+- (void)requestLatestTweet:(DHRequestSuccessBlock)success failed:(DHRequestFailBlock)fail
+{
+    NSURL *twitterURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@statuses/user_timeline.json", TWITTER_URL_ROOT]];
+    
+    ACAccountType *twitterAccountType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    
+    ACAccount *twitterAccount = (ACAccount *)[[self.accountStore accountsWithAccountType:twitterAccountType] lastObject];    
+    
+    NSDictionary *params = @{@"user_id": [twitterAccount username],
+                             @"count": @"1",
+                             @"exclude_replies": @"true"};
+    
+    SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                            requestMethod:SLRequestMethodGET
+                                                      URL:twitterURL
+                                               parameters:params];
+    
+    [request setAccount:twitterAccount];
+    
+    [self performRequest:request
+                 success:success
+                  failed:fail];
+}
+
+
+- (void)deleteTweetWithID:(NSString *)tweetID success:(DHRequestSuccessBlock)success failed:(DHRequestFailBlock)fail
+{
+    NSURL *twitterURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@statuses/destroy/%@.json",
+                                              TWITTER_URL_ROOT,
+                                              tweetID]];
+    
+    ACAccountType *twitterAccountType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    
+    ACAccount *twitterAccount = (ACAccount *)[[self.accountStore accountsWithAccountType:twitterAccountType] lastObject];
+    
+    NSDictionary *params = @{@"id": tweetID};
+    
+    SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                            requestMethod:SLRequestMethodPOST
+                                                      URL:twitterURL
+                                               parameters:params];
+    
+    [request setAccount:twitterAccount];
+    
+    [self performRequest:request
+                 success:success
+                  failed:fail];
+}
+
+
+#pragma mark - Private
+- (void)performRequest:(SLRequest *)request success:(DHRequestSuccessBlock)success failed:(DHRequestFailBlock)fail
+{
     [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error)
-    {
-        dispatch_async(dispatch_get_main_queue(), ^()
-        {
-            if ((responseData) && (urlResponse.statusCode == 200))
-            {
-                //Convert to JSON...
-                NSError *jsonError = nil;
-                NSArray *tweets = [NSJSONSerialization JSONObjectWithData:responseData
-                                                                  options:NSJSONReadingMutableContainers
-                                                                    error:&jsonError];
-                
-                if ([tweets lastObject]) {
-                    success(tweets);
-                }
-                else {
-                    fail(jsonError);
-                }
-             
-            }
-            else {
-                NSLog(@"URL request not successful. Response code: %d", urlResponse.statusCode);
-                fail(error);
-            }
-        });
-    }];
+     {
+         dispatch_async(dispatch_get_main_queue(), ^()
+                        {
+                            if ((responseData) && (urlResponse.statusCode == 200))
+                            {
+                                //Convert to JSON...
+                                NSError *jsonError = nil;
+                                NSArray *tweets = [NSJSONSerialization JSONObjectWithData:responseData
+                                                                                  options:NSJSONReadingMutableContainers
+                                                                                    error:&jsonError];
+                                
+                                if ([tweets lastObject]) {
+                                    success(tweets);
+                                }
+                                else {
+                                    fail(jsonError);
+                                }
+                                
+                            }
+                            else {
+                                NSLog(@"URL request not successful. Response code: %d", urlResponse.statusCode);
+                                fail(error);
+                            }
+                        });
+     }];
 }
 
 

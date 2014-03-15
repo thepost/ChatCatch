@@ -108,9 +108,26 @@
         {
             //Reload data...
             [self refresh:nil];
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
             
-            //Auto-Delete tweet...
-            
+            //Get status ID of the most recent tweet...
+            [_twitterRequest requestLatestTweet:^(id response)
+            {
+                //Auto-Delete tweet...
+                if ([[response class] isSubclassOfClass:[NSArray class]])
+                {
+                    NSDictionary *tweet = [(NSArray *)response lastObject];
+                
+                    if (tweet) {
+                        [_twitterRequest deleteTweetWithID:[tweet objectForKey:@"id"]
+                                                   success:NULL
+                                                    failed:NULL];
+                    }
+                }
+            }
+                                         failed:^(NSError *error) {
+                                             //Handle error...
+                                         }];
         }];
         
         [self presentViewController:twitterComposer
