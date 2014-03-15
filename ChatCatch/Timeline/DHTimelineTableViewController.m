@@ -81,6 +81,18 @@
     [[cell nameLabel] setText:[user name]];
     [[cell screenNameLabel] setText:[NSString stringWithFormat:@"@%@", [user screenName]]];
     
+    //Download and set image...
+    if ([user profileImageNormal] == nil)
+    {
+        NSData *imageData = [NSData dataWithContentsOfURL:[user profileImageNormalURL]];
+        
+        if (imageData) {
+            user.profileImageNormal = [UIImage imageWithData:imageData];
+        }
+    }
+    
+    [[cell thumbImage] setImage:[user profileImageNormal]];
+    
     return cell;
 }
 
