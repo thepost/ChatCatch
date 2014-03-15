@@ -28,6 +28,9 @@
     if ([_twitterRequest isTwitterEnabled] == NO) {
         [self alertTwitterSignIn];
     }
+    else {
+        [self refresh:nil];
+    }
 }
 
 
@@ -92,8 +95,31 @@
 }
 
 
-- (IBAction)compose:(id)sender {
+- (IBAction)compose:(id)sender
+{
     //Present Twitter view controller...
+    BOOL twitterEnabled = [_twitterRequest isTwitterEnabled];
+    
+    if (twitterEnabled == YES)
+    {
+        SLComposeViewController *twitterComposer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        [twitterComposer setCompletionHandler:^(SLComposeViewControllerResult result)
+        {
+            //Reload data...
+            [self refresh:nil];
+            
+            //Auto-Delete tweet...
+            
+        }];
+        
+        [self presentViewController:twitterComposer
+                           animated:YES
+                         completion:NULL];
+    }
+    else {
+        [self alertTwitterSignIn];
+    }
 }
 
 
