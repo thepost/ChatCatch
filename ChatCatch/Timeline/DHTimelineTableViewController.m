@@ -24,7 +24,7 @@
     self = [super initWithCoder:aDecoder];
 
     if (self) {
-        self.timelineDatasource = [[DHTimelineDatasource alloc] initWithArray:@[@"Alison", @"Mike"]];
+        self.timelineDatasource = [[DHTimelineDatasource alloc] initWithArray:nil];
     }
     return self;
 }
@@ -46,6 +46,8 @@
     
     //Reload table view...
     [self.tableView reloadData];
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 
@@ -60,10 +62,9 @@
     NSInteger numRows = [_timelineDatasource numberOfTweets];
     
     if (numRows == 0) {
-#warning TODO: Handle error!
+        //Handle error!
     }
     return numRows;
-
 }
 
 
@@ -73,10 +74,12 @@
                                                                     forIndexPath:indexPath];
     
     //Configure the cell...
-#warning TODO: TweeterStatus *status = [_timelineDatasource tweetAtIndex:indexPath.row];
-    NSString *status = [_timelineDatasource tweetAtIndex:indexPath.row];
+    TweeterStatus *status = [_timelineDatasource tweetAtIndex:indexPath.row];
+    TwitterUser *user = [status user];
     
-    [[cell statusLabel] setText:status];
+    [[cell statusLabel] setText:[status text]];
+    [[cell nameLabel] setText:[user name]];
+    [[cell screenNameLabel] setText:[NSString stringWithFormat:@"@%@", [user screenName]]];
     
     return cell;
 }

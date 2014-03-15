@@ -83,7 +83,7 @@ NSString *const TWITTER_URL_ROOT = @"https://api.twitter.com/1.1/";
 {
     NSURL *twitterURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@statuses/home_timeline.json", TWITTER_URL_ROOT]];
     
-    NSDictionary *params = @{@"count": @"2",
+    NSDictionary *params = @{@"count": @"10",
                              @"contributor_details": @"true"};
 
     SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
@@ -105,7 +105,7 @@ NSString *const TWITTER_URL_ROOT = @"https://api.twitter.com/1.1/";
             //Convert to JSON...
             NSError *jsonError = nil;
             NSArray *tweets = [NSJSONSerialization JSONObjectWithData:responseData
-                                                              options:NSJSONReadingAllowFragments
+                                                              options:NSJSONReadingMutableContainers
                                                                 error:&jsonError];
             
             if ([tweets lastObject]) {

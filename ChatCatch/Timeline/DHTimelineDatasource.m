@@ -7,7 +7,6 @@
 //
 
 #import "DHTimelineDatasource.h"
-#import "TweeterStatus.h"
 
 
 @interface DHTimelineDatasource()
@@ -24,20 +23,17 @@
 {
     self = [super init];
     
-    if (self)
-    {
-        if ([tweetData lastObject]) {
-            self.timelineTweets = [[NSMutableArray alloc] initWithArray:tweetData];
-        }
+    if (self) {
+        self.timelineTweets = [[NSMutableArray alloc] initWithArray:tweetData];
     }
     return self;
 }
 
 
 #pragma mark - Accessors
-- (id)tweetAtIndex:(NSInteger)index
+- (TweeterStatus *)tweetAtIndex:(NSInteger)index
 {
-    id tweet = @"";
+    TweeterStatus *tweet = nil;
     
     if ([_timelineTweets lastObject]) {
         tweet = [_timelineTweets objectAtIndex:index];
@@ -78,6 +74,12 @@
                 
                 //Set TweeterStatus...
                 TweeterStatus *status = [[TweeterStatus alloc] initWithUser:user];
+                [status setText:[tweetDict objectForKey:@"text"]];
+                
+//                NSString *dateString = [tweetDict objectForKey:@"created_at"];
+
+                [status setFavorited:[[tweetDict objectForKey:@"favorited"] boolValue]];
+                [status setRetweeted:[[tweetDict objectForKey:@"retweeted"] boolValue]];
                 
                 //Add TweeterStatus to timelineTweets structure...
                 [self.timelineTweets addObject:status];

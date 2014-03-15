@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Dashend. All rights reserved.
 //
 
-@class TweeterStatus;
+#import "TweeterStatus.h"
 
 @interface DHTimelineDatasource : NSObject
 
@@ -20,8 +20,7 @@
 
 /** 
  */
-//- (TweeterStatus *)tweetAtIndex:(NSInteger)index;
-- (id)tweetAtIndex:(NSInteger)index;
+- (TweeterStatus *)tweetAtIndex:(NSInteger)index;
 
 /**
  */

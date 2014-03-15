@@ -60,6 +60,8 @@
         
     if (twitterEnabled == YES)
     {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+        
         //2. Now check if we have access...
         [_twitterRequest requestAccess:^(id response)
         {
@@ -75,10 +77,12 @@
             }
                                       failed:^(NSError *error) {
                                           //3b. Handle error...
+                                          [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
                                       }];
         }
                                 failed:^(NSError *error) {
                                     //2b. Inform that no access was given...
+                                    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
                                     [self alertTwitterSignIn];
                                 }];
     }
